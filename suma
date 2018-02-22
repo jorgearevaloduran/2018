@@ -1,0 +1,207 @@
+#pragma once
+class SUMA_DE_DATOS
+{	
+public:
+	int a;
+	void leer(int b)
+	{
+		a=b;
+	}
+	void mostrar(int c)
+	{
+		c=a;
+	}
+	int sumar(SUMA_DE_DATOS A, SUMA_DE_DATOS B)
+	{
+		return A.a + B.a;
+	}
+	int restar(SUMA_DE_DATOS A, SUMA_DE_DATOS B)
+	{
+		return A.a - B.a;
+	}
+
+};
+
+
+
+
+
+
+
+
+#pragma once
+#include <iostream>
+#include <string>
+#include "SUMA_DE_DATOS.h"
+namespace sumadedatos {
+
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Drawing;
+	using namespace std;
+
+	/// <summary>
+	/// Summary for Form1
+	/// </summary>
+	public ref class Form1 : public System::Windows::Forms::Form
+	{
+	public:
+		Form1(void)
+		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+
+	protected:
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		~Form1()
+		{
+			if (components)
+			{
+				delete components;
+			}
+		}
+	private: System::Windows::Forms::TextBox^  tvalor_a;
+	private: System::Windows::Forms::TextBox^  tvalor_b;
+	private: System::Windows::Forms::Button^  bsuma;
+	protected: 
+
+	protected: 
+
+	protected: 
+
+
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::TextBox^  tvalor_c;
+
+
+	private:
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		System::ComponentModel::Container ^components;
+
+#pragma region Windows Form Designer generated code
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		void InitializeComponent(void)
+		{
+			this->tvalor_a = (gcnew System::Windows::Forms::TextBox());
+			this->tvalor_b = (gcnew System::Windows::Forms::TextBox());
+			this->bsuma = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->tvalor_c = (gcnew System::Windows::Forms::TextBox());
+			this->SuspendLayout();
+			// 
+			// tvalor_a
+			// 
+			this->tvalor_a->ForeColor = System::Drawing::SystemColors::MenuHighlight;
+			this->tvalor_a->Location = System::Drawing::Point(51, 77);
+			this->tvalor_a->Name = L"tvalor_a";
+			this->tvalor_a->Size = System::Drawing::Size(114, 20);
+			this->tvalor_a->TabIndex = 0;
+			// 
+			// tvalor_b
+			// 
+			this->tvalor_b->ForeColor = System::Drawing::SystemColors::MenuHighlight;
+			this->tvalor_b->Location = System::Drawing::Point(51, 139);
+			this->tvalor_b->Name = L"tvalor_b";
+			this->tvalor_b->Size = System::Drawing::Size(114, 20);
+			this->tvalor_b->TabIndex = 1;
+			// 
+			// bsuma
+			// 
+			this->bsuma->Location = System::Drawing::Point(217, 90);
+			this->bsuma->Name = L"bsuma";
+			this->bsuma->Size = System::Drawing::Size(107, 51);
+			this->bsuma->TabIndex = 2;
+			this->bsuma->Text = L"SUMAR";
+			this->bsuma->UseVisualStyleBackColor = true;
+			this->bsuma->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::SystemColors::ActiveBorder;
+			this->label1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label1->Location = System::Drawing::Point(57, 61);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(40, 13);
+			this->label1->TabIndex = 3;
+			this->label1->Text = L"valor A";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::SystemColors::ActiveBorder;
+			this->label2->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label2->Location = System::Drawing::Point(57, 123);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(40, 13);
+			this->label2->TabIndex = 4;
+			this->label2->Text = L"valor B";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::SystemColors::ActiveBorder;
+			this->label3->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->label3->Location = System::Drawing::Point(57, 191);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(73, 13);
+			this->label3->TabIndex = 6;
+			this->label3->Text = L"RESULTADO";
+			this->label3->Click += gcnew System::EventHandler(this, &Form1::label3_Click);
+			// 
+			// tvalor_c
+			// 
+			this->tvalor_c->ForeColor = System::Drawing::SystemColors::MenuHighlight;
+			this->tvalor_c->Location = System::Drawing::Point(51, 207);
+			this->tvalor_c->Name = L"tvalor_c";
+			this->tvalor_c->Size = System::Drawing::Size(158, 20);
+			this->tvalor_c->TabIndex = 5;
+			this->tvalor_c->TextChanged += gcnew System::EventHandler(this, &Form1::textBox1_TextChanged);
+			// 
+			// Form1
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(365, 460);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->tvalor_c);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->bsuma);
+			this->Controls->Add(this->tvalor_b);
+			this->Controls->Add(this->tvalor_a);
+			this->Name = L"Form1";
+			this->Text = L"Form1";
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
+		}
+#pragma endregion
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
+			 {
+				 SUMA_DE_DATOS x,y,z;
+				 x.leer(System::Convert::ToInt32(tvalor_a->Text));
+				 y.leer(System::Convert::ToInt32(tvalor_b->Text));
+				 z.a=z.sumar(x,y);
+				 tvalor_c->text=System::Convert::ToString(z.a);
+			 }
+	
+};
+}
